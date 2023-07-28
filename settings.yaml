@@ -1,0 +1,52 @@
+account:
+  id: 2674
+  name: 'BW Templates'
+
+events:
+  prod_event:
+    id: 126333
+    name: 'Swoogo Auto Deployment Demo'
+
+context:
+  site_id:
+    id: 94097
+  page_id:
+    id: 2932981
+  language:
+    param: lang
+    value: en
+
+templates:
+  test_agenda:
+    file_name: test_agenda.html
+    path: twig-templates
+    swoogo:
+      prod:
+        event: prod_event
+        id: 1123
+        name: 'Test Agenda'
+
+  other_test_agenda:
+    file_name: other_test_agenda.twig
+    path: twig-templates/on_demand
+    swoogo:
+      prod:
+        event: prod_event
+        id: 1124
+        name: 'Other Agenda'
+
+
+snippets:
+  test_snippet:
+    file_name: test_snippet.html
+    path: snippet
+    swoogo:
+      dev:
+        id: 1
+        name: 'UAT Test - Snippet name'
+      prod:
+        id: 10082
+        name: 'Test Snippet'
+
+themes:
+  # pass

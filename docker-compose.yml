@@ -1,0 +1,8 @@
+version: '3'
+services:
+  deploy:
+    image: ghcr.io/joaquin-gamba/swoogo_autodeploy_resources:0.1.0
+    env_file:
+      - '.env'
+    volumes:
+      - .:/repositories/project
