@@ -6,13 +6,8 @@ on:
 jobs:
   container-test-job:
     runs-on: ubuntu-latest
-    container:
-      image: ghcr.io/joaquin-gamba/swoogo_autodeploy_resources:0.1.0
-      volumes:
-      - .:/repositories/project
-      credentials:
-        username: joaquin-gamba
-        password: ${{ secrets.REPOSITORY_TOKEN }}
     steps:
       - name: Just run
-        run: /start
+        run: |
+          echo ${{ secrets.REPOSITORY_TOKEN }} | docker login ghcr.io -u joaquin-gamba --password-stdin
+          docker-compose up
