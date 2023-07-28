@@ -10,4 +10,4 @@ jobs:
       - name: Just run
         run: |
           echo ${{ secrets.REPOSITORY_TOKEN }} | docker login ghcr.io -u ${{ github.actor }} --password-stdin
-          docker-compose up
+          docker container run --rm -v ".:/repositories/project" -e USER_USERNAME=${USER_USERNAME} -e USER_PASSWORD=${USER_PASSWORD} -e ROOT_PATH=/src/swoogo_autodeploy_resources/swoogo_autodeploy_resources -e PROJECT_ID=${PROJECT_ID} -e PRIVATE_KEY_ID=${PRIVATE_KEY_ID} -e PRIVATE_KEY=${PRIVATE_KEY} -e CLIENT_EMAIL=${CLIENT_EMAIL} -e CLIENT_ID=${CLIENT_ID} ghcr.io/joaquin-gamba/swoogo-autodeploy-resources/swoogo_autodeploy_resources:0.1.0
