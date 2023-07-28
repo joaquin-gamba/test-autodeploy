@@ -11,7 +11,7 @@ jobs:
       volumes:
       - .:/repositories/project
       credentials:
-        username: joaquin.gamba
+        username: joaquin-gamba
         password: ${{ secrets.REPOSITORY_TOKEN }}
     steps:
       - name: Just run
