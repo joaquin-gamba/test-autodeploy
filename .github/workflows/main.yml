@@ -8,6 +8,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Stats
+        run: |
+          ls
+          pwd
       - name: Docker Loggin
         run: |
           echo ${{ secrets.REPOSITORY_TOKEN }} | docker login ghcr.io -u ${{ github.actor }} --password-stdin
